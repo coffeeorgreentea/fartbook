@@ -8,7 +8,6 @@ const people = [
     twitterUrl: "#",
     linkedinUrl: "#",
   },
-  // More people...
 ];
 
 export default function Team() {
