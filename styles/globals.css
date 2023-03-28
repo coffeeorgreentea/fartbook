@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme Variables */
+:root {
+  --bg-primary: #18181b;
+  --bg-secondary: #0b0412;
+  --bg-tertiary: rgb(51, 17, 77);
+}
+
+[data-theme="test"] {
+  --bg-primary: red;
+  --bg-secondary: white;
+  --bg-tertiary: #581c87;
+}
+
+/* Radial Gradient and Animation */
+.radial {
+  background: radial-gradient(at left, var(--tw-gradient-stops));
+  background-size: 400% 400%;
+}
+.background-animate {
+  background-size: 400% 400%;
+  animation: Gradient 70s ease infinite;
+  -webkit-animation: Gradient 70s ease infinite;
+  -moz-animation: Gradient 70s ease infinite;
+  backdrop-filter: blur(10px);
+}
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Daisy Overides */
+.btn {
+  text-transform: none;
+}
+
+/* Page Container Backdrop filters */
+.bright {
+  --tw-backdrop-brightness: brightness(1);
+  --tw-backdrop-saturate: saturate(2);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+    var(--tw-backdrop-saturate);
+}
+
+.dim {
+  --tw-backdrop-blur: blur(8px);
+  --tw-backdrop-saturate: saturate(2);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
+    var(--tw-backdrop-saturate);
+}
+
+/* conic gradient with tw colors */
+.conic {
+  background-image: conic-gradient(at right bottom, var(--tw-gradient-stops));
+  background-size: 400% 400%;
+}
+
+.underline-under {
+  text-underline-position: under;
+}
+
+/* Do this without @apply in future */
+
+.z-border {
+  @apply transition-colors duration-500 ease-in-out border;
+}
+.z-icon {
+  @apply absolute top-0 bottom-0 left-0 right-0 z-0 w-full mx-auto mt-5 mb-10 text-opacity-50 transition-colors duration-500 ease-in-out group-hover:text-opacity-100 h-4/6 opacity-60;
+}
+
+.xtext {
+  @apply flex;
+}
+
+/* purple */
+.z-border-purple {
+  @apply z-border hover:border-purple-400;
+}
+.z-purple {
+  @apply text-purple-500;
+}
+
+.zh-purple {
+  @apply hover:text-purple-500 group-hover:text-purple-500;
+}
+
+/* indigo */
+.z-border-indigo {
+  @apply z-border hover:border-indigo-400;
+}
+.z-indigo {
+  @apply text-indigo-500;
+}
+.zh-indigo {
+  @apply hover:text-indigo-500 group-hover:text-indigo-500;
+}
+
+/* emerald */
+.z-border-emerald {
+  @apply z-border hover:border-emerald-400;
+}
+.z-emerald {
+  @apply text-emerald-500;
+}
+.zh-emerald {
+  @apply hover:text-emerald-500 group-hover:text-emerald-500;
+}
+
+/* rose */
+.z-border-rose {
+  @apply z-border hover:border-rose-400;
+}
+.z-rose {
+  @apply text-rose-500;
+}
+.zh-rose {
+  @apply hover:text-rose-500 group-hover:text-rose-500;
+}
+
+/* yellow */
+.z-border-yellow {
+  @apply z-border hover:border-yellow-400;
+}
+.z-yellow {
+  @apply text-yellow-500;
+}
+.zh-yellow {
+  @apply hover:text-yellow-500 group-hover:text-yellow-500;
+}
+
+/* red */
+.z-border-red {
+  @apply z-border hover:border-red-400;
+}
+.z-red {
+  @apply text-red-500;
+}
+.zh-red {
+  @apply hover:text-red-500 group-hover:text-red-500;
+}
+
+/* orange */
+.z-border-orange {
+  @apply z-border hover:border-orange-400;
+}
+.z-orange {
+  @apply text-orange-500;
+}
+.zh-orange {
+  @apply hover:text-orange-500 group-hover:text-orange-500;
+}
+
+/* teal */
+.z-border-teal {
+  @apply z-border hover:border-teal-400;
+}
+.z-teal {
+  @apply text-teal-500;
+}
+.zh-teal {
+  @apply hover:text-teal-500 group-hover:text-teal-500;
+}
+
+/* violet */
+.z-border-violet {
+  @apply z-border hover:border-violet-400;
+}
+.z-violet {
+  @apply text-violet-500;
+}
+.zh-violet {
+  @apply hover:text-violet-500 group-hover:text-violet-500;
+}
