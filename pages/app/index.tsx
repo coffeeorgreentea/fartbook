@@ -8,12 +8,33 @@ import { getProcessingCount, getQueryClient, getUserProps } from "@/utils/ssr";
 import Action from "@/components/dashboard/Action";
 import { actions } from "@/constants/actions";
 import { useState } from "react";
+import BasicButton from "@/components/buttons/BasicButton";
+import AudioPlayer from "@/components/audio/AudioPlayer";
 
 export default function IndexPage({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const [actionOpen, setActionOpen] = useState(false);
-  const [currentAction, setCurrentAction] = useState(actions[0]);
+  const [prompt, setPrompt] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [audio, setAudio] = useState<string | null>(null);
+  const fart = async () => {
+    setLoading(true);
+    const audio = await fetch("/api/fart", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        modelInputs: {
+          prompt: prompt,
+        },
+      }),
+    });
+    const result = await audio.json();
+    setAudio(result.audio);
+    setLoading(false);
+  };
+
   return (
     <PageContainer
       sidebar={<SideContent />}
@@ -23,7 +44,19 @@ export default function IndexPage({
     >
       <div className="sm:card-body">
         <Welcome />
-        <p>Insert Fart Generation Stuff Here</p>
+        <div className="flex flex-col space-y-2">
+          <input
+            type="text"
+            className="input input-bordered w-full border-indigo-500 focus:border-purple-600 ring-none rounded-sm"
+            value={prompt}
+            onChange={(e) => setPrompt(e.target.value)}
+            placeholder="Describe your fart"
+          />
+          <BasicButton as="button" onClick={fart} loading={loading}>
+            Fart
+          </BasicButton>
+          {audio && <AudioPlayer base64Audio={audio} />}
+        </div>
       </div>
     </PageContainer>
   );
