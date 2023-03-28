@@ -42,7 +42,7 @@ export default function IndexPage({
 
   return (
     <PageContainer
-      sidebar={<SideContent />}
+      // sidebar={<SideContent />}
       title="Dashboard"
       description="next-ai app dashboard"
       transition={true}

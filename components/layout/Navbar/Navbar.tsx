@@ -46,14 +46,14 @@ const Navbar = (props: Props) => {
     <Transition
       variants={fade}
       name="navbar"
-      className="z-50 flex w-full text-white align-middle border-b bg-black/50 min-h-12 border-b-purple-700"
+      className="z-50 flex w-full text-white align-middle border-b bg-white/50 min-h-[3.5rem] border-b-green-700"
     >
       {/* Mobile Menu Button */}
       <div className="flex-none md:hidden">
         <button
           // htmlFor="my-drawer-3"
           onClick={() => setMobileMenu(true)}
-          className="text-purple-400 btn btn-square btn-ghost"
+          className="text-green-400 btn btn-square btn-ghost"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ const Navbar = (props: Props) => {
               {siteNavigation.map(({ href, name }) => (
                 <Link
                   key={`{${href}-nav`}
-                  className="hidden my-auto text-sm font-semibold transition-colors duration-300 ease-in-out hover:text-purple-300 lg:flex"
+                  className="hidden my-auto text-sm font-semibold transition-colors duration-300 ease-in-out hover:text-green-300 lg:flex"
                   href={href}
                 >
                   {name}
@@ -85,7 +85,7 @@ const Navbar = (props: Props) => {
               ))}
 
               <Link
-                className="flex w-16 my-auto text-sm font-semibold transition-colors duration-300 ease-in-out hover:text-purple-300"
+                className="flex w-16 my-auto text-sm font-semibold transition-colors duration-300 ease-in-out hover:text-green-300"
                 href={session ? "/app" : isLoginRoute ? "/" : "/login"}
               >
                 {session ? "Dashboard" : isLoginRoute ? "Go back" : "Login"}
@@ -139,7 +139,7 @@ const UserMenuHeader = ({ username }: { username: string }) => {
       <p className="text-sm">Signed in as</p>
       <Link
         href="#"
-        className="text-sm font-medium text-purple-400 truncate hover:underline underline-under"
+        className="text-sm font-medium text-green-400 truncate hover:underline underline-under"
       >
         {username}
       </Link>

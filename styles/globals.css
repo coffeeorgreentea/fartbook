@@ -4,9 +4,9 @@
 
 /* Theme Variables */
 :root {
-  --bg-primary: #18181b;
-  --bg-secondary: #0b0412;
-  --bg-tertiary: rgb(51, 17, 77);
+  --bg-primary: #c1c9b9;
+  --bg-secondary: #6cc10b;
+  --bg-tertiary: rgb(17, 77, 31);
 }
 
 [data-theme="test"] {
