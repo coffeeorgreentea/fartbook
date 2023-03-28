@@ -13,8 +13,7 @@
     "@headlessui/react": "^1.7.8",
     "@heroicons/react": "^2.0.14",
     "@next-auth/supabase-adapter": "^0.2.1",
-    "@pqina/pintura": "^8.51.7",
-    "@pqina/react-pintura": "^8.51.7",
+
     "@supabase/auth-helpers-nextjs": "^0.5.4",
     "@supabase/auth-helpers-react": "^0.3.1",
     "@supabase/auth-ui-react": "^0.2.6",
@@ -40,6 +39,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.4.0",
+    "wavesurfer.js": "^6.6.2",
     "zod": "^3.20.6"
   },
   "devDependencies": {
@@ -47,6 +47,7 @@
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
+    "@types/wavesurfer.js": "^6.0.3",
     "autoprefixer": "^10.4.13",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
