@@ -1,36 +1,51 @@
-import { useState, useRef } from "react";
+import React, { useRef, useEffect } from "react";
+import WaveSurfer from "wavesurfer.js";
 
-interface AudioPlayerProps {
-  base64Audio: string;
+interface Props {
+  audioBase64: string;
 }
 
-const AudioPlayer: React.FC<AudioPlayerProps> = ({ base64Audio }) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef<HTMLAudioElement>(null);
+const AudioPlayer: React.FC<Props> = ({ audioBase64 }) => {
+  const waveformRef = useRef<HTMLDivElement>(null);
+  const wavesurferRef = useRef<WaveSurfer | null>(null);
 
-  const togglePlay = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
+  useEffect(() => {
+    const wavesurfer = WaveSurfer.create({
+      container: waveformRef.current!,
+      waveColor: "#333",
+      progressColor: "purple",
+      cursorColor: "navy",
+      barWidth: 3,
+      barHeight: 1,
+      responsive: true,
+    });
+
+    wavesurferRef.current = wavesurfer;
+
+    wavesurfer.load("data:audio/wav;base64," + audioBase64);
+
+    return () => {
+      wavesurfer.destroy();
+    };
+  }, [audioBase64]);
+
+  const handlePlay = () => {
+    if (wavesurferRef.current) {
+      wavesurferRef.current.play();
     }
   };
 
-  const onEnded = () => {
-    setIsPlaying(false);
+  const handlePause = () => {
+    if (wavesurferRef.current) {
+      wavesurferRef.current.pause();
+    }
   };
 
   return (
     <div>
-      <audio
-        ref={audioRef}
-        src={`data:audio/mp3;base64,${base64Audio}`}
-        onEnded={onEnded}
-      />
-      <button onClick={togglePlay}>{isPlaying ? "Pause" : "Play"}</button>
+      <div ref={waveformRef} />
+      <button onClick={handlePlay}>Play</button>
+      <button onClick={handlePause}>Pause</button>
     </div>
   );
 };

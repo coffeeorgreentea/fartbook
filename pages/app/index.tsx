@@ -9,7 +9,12 @@ import Action from "@/components/dashboard/Action";
 import { actions } from "@/constants/actions";
 import { useState } from "react";
 import BasicButton from "@/components/buttons/BasicButton";
-import AudioPlayer from "@/components/audio/AudioPlayer";
+// import AudioPlayer from "@/components/audio/AudioPlayer";
+import dynamic from "next/dynamic";
+
+const AudioPlayer = dynamic(() => import("@/components/audio/AudioPlayer"), {
+  ssr: false,
+});
 
 export default function IndexPage({
   data,
@@ -53,9 +58,9 @@ export default function IndexPage({
             placeholder="Describe your fart"
           />
           <BasicButton as="button" onClick={fart} loading={loading}>
-            Fart
+            {loading ? "Farting..." : "Fart!"}
           </BasicButton>
-          {audio && <AudioPlayer base64Audio={audio} />}
+          {audio && <AudioPlayer audioBase64={audio} />}
         </div>
       </div>
     </PageContainer>
