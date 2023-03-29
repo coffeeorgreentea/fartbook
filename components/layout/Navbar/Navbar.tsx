@@ -49,7 +49,7 @@ const Navbar = (props: Props) => {
       className="z-50 flex w-full text-white align-middle bg-white/50 min-h-[3.5rem] navbar-shadow"
     >
       {/* Mobile Menu Button */}
-      {/* <div className="flex-none md:hidden">
+      <div className="flex-none md:hidden">
         <button
           // htmlFor="my-drawer-3"
           onClick={() => setMobileMenu(true)}
@@ -70,67 +70,21 @@ const Navbar = (props: Props) => {
           </svg>
         </button>
       </div>
-      <div className="inline-flex w-full align-middle">
-        <div className="inline-flex justify-end w-full mr-4 space-x-10">
-          {!isAppRoute && (
-            <>
-              {siteNavigation.map(({ href, name }) => (
-                <Link
-                  key={`{${href}-nav`}
-                  className="hidden my-auto text-sm font-semibold transition-colors duration-300 ease-in-out hover:text-green-300 lg:flex"
-                  href={href}
-                >
-                  {name}
-                </Link>
-              ))}
-
-              <Link
-                className="flex w-16 my-auto text-sm font-semibold transition-colors duration-300 ease-in-out hover:text-green-300"
-                href={session ? "/app" : isLoginRoute ? "/" : "/login"}
-              >
-                {session ? "Dashboard" : isLoginRoute ? "Go back" : "Login"}
-              </Link>
-            </>
-          )}
-
-          {session && (
-            <div className="inline-flex justify-end align-middle">
-              <DropdownMenu
-                header={
-                  <UserMenuHeader
-                    username={
-                      typeof profile?.username === "string"
-                        ? `@${profile?.username}`
-                        : "loading..."
-                    }
-                  />
-                }
-                menuItems={[
-                  ...items,
-                  {
-                    title: "Logout",
-                    onClick: logout,
-                    type: "button",
-                    loading: logoutLoading,
-                  },
-                ]}
-                classNames="w-10 mask mask-circle transition-transform ease-in-out duration-150 active:scale-95"
-              >
-                <Image
-                  src={
-                    profile?.avatar_url ? profile.avatar_url : "/img/logo.png"
-                  }
-                  alt="user-avatar"
-                  width={40}
-                  height={40}
-                />
-              </DropdownMenu>
-            </div>
-          )}
-        </div>
-      </div> */}
-      <div className="flex flex-row-reverse items-center w-full mr-4">
-        <h1 className="text-4xl font-bold text-[#2BBF5E]">fartbook</h1>
+      <div className="flex flex-row items-center justify-between w-full mx-4">
+        <Image
+          src="/img/logo.png"
+          alt="logo"
+          width={48}
+          height={48}
+          unoptimized
+        />
+        <Image
+          src="/img/text-logo.png"
+          alt="logo"
+          width={192}
+          height={48}
+          unoptimized
+        />
       </div>
     </Transition>
   );
