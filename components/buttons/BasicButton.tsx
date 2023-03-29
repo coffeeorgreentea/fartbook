@@ -14,7 +14,8 @@ type Props = {
 
 const baseClasses =
   // "duration-300 ease-in-out bg-black hover:bg-black/50 border border-indigo-400 rounded-sm btn btn-ghost hover:border-purple-500";
-  "bg-indigo-500 rounded-xl btn btn-ghost";
+  // "bg-[#1173F1] rounded-xl btn btn-ghost hover:bg-[#1173F1] focus:bg-[#1173F1] button-text text-4xl";
+  "button-new text-3xl button-text";
 
 const BasicButton = ({
   children,

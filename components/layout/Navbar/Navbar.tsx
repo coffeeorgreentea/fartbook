@@ -46,10 +46,10 @@ const Navbar = (props: Props) => {
     <Transition
       variants={fade}
       name="navbar"
-      className="z-50 flex w-full text-white align-middle border-b bg-white/50 min-h-[3.5rem] border-b-green-700"
+      className="z-50 flex w-full text-white align-middle bg-white/50 min-h-[3.5rem] navbar-shadow"
     >
       {/* Mobile Menu Button */}
-      <div className="flex-none md:hidden">
+      {/* <div className="flex-none md:hidden">
         <button
           // htmlFor="my-drawer-3"
           onClick={() => setMobileMenu(true)}
@@ -128,6 +128,9 @@ const Navbar = (props: Props) => {
             </div>
           )}
         </div>
+      </div> */}
+      <div className="flex flex-row-reverse items-center w-full mr-4">
+        <h1 className="text-4xl font-bold text-[#2BBF5E]">fartbook</h1>
       </div>
     </Transition>
   );

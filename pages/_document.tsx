@@ -18,7 +18,7 @@ class MyDocument extends Document {
       <Html className="">
         <Head></Head>
         <body
-          className="w-full h-screen overflow-hidden antialiased text-white transition-transform duration-500 ease-in-out radial main-gradient"
+          className="w-full h-screen overflow-hidden antialiased text-white transition-transform duration-500 ease-in-out bg-gradient-to-b from-white to-green-200"
         >
            {/* background-animate from-bg-primary via-bg-secondary to-bg-tertiary */}
           <Main />

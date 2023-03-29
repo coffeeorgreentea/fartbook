@@ -2,20 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
+.navbar-shadow {
+  box-shadow: 0px 4px 42px rgba(0, 0, 0, 0.25);
+}
+
+.button-text {
+  /* font-family: "Inter"; */
+  font-style: normal;
+  font-weight: 800;
+  /* font-size: 62px; */
+  /* line-height: 75px; */
+
+  /* identical to box height */
+  text-align: center;
+}
+
+.button-new {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 23px 58px;
+  gap: 10px;
+
+  /* position: absolute; */
+  /* width: 586px; */
+  /* height: 121px; */
+  /* left: 571px; */
+  /* top: 654px; */
+
+  /* book blue */
+  background: #1173f1;
+  border-radius: 12px;
+}
+
 /* Main Gradient */
-.main-gradient {
+/* .main-gradient {
   background: linear-gradient(
     180deg,
     #ffffff 0%,
     rgba(43, 191, 93, 0.3)
   );
-}
+} */
 
 /* Theme Variables */
 :root {
-  --bg-primary: #ffffff;
-  --bg-secondary: rgb(43, 191, 93, 0.3);
-  --bg-tertiary: rgb(43, 191, 93, 0.3);
+  --bg-primary: #fff;
+  --bg-secondary: #5ea986;
+  --bg-tertiary: #77cda5;
 }
 
 [data-theme="test"] {
