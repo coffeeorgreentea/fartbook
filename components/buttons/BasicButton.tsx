@@ -13,7 +13,8 @@ type Props = {
 };
 
 const baseClasses =
-  "duration-300 ease-in-out bg-black hover:bg-black/50 border border-indigo-400 rounded-sm btn btn-ghost hover:border-purple-500";
+  // "duration-300 ease-in-out bg-black hover:bg-black/50 border border-indigo-400 rounded-sm btn btn-ghost hover:border-purple-500";
+  "bg-indigo-500 rounded-xl btn btn-ghost";
 
 const BasicButton = ({
   children,

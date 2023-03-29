@@ -17,7 +17,10 @@ class MyDocument extends Document {
     return (
       <Html className="">
         <Head></Head>
-        <body className="w-full h-screen overflow-hidden antialiased text-white transition-transform duration-500 ease-in-out radial background-animate from-bg-primary via-bg-secondary to-bg-tertiary">
+        <body
+          className="w-full h-screen overflow-hidden antialiased text-white transition-transform duration-500 ease-in-out radial main-gradient"
+        >
+           {/* background-animate from-bg-primary via-bg-secondary to-bg-tertiary */}
           <Main />
           <NextScript />
         </body>

@@ -2,11 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Main Gradient */
+.main-gradient {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(43, 191, 93, 0.3)
+  );
+}
+
 /* Theme Variables */
 :root {
-  --bg-primary: #c1c9b9;
-  --bg-secondary: #6cc10b;
-  --bg-tertiary: rgb(17, 77, 31);
+  --bg-primary: #ffffff;
+  --bg-secondary: rgb(43, 191, 93, 0.3);
+  --bg-tertiary: rgb(43, 191, 93, 0.3);
 }
 
 [data-theme="test"] {

@@ -30,7 +30,7 @@ const Layout = ({ children }: Props) => {
       /> */}
       <ToastWind />
       {/* Sidebar */}
-      {session && router.pathname !== "/login" && <Sidebar />}
+      {/* {session && router.pathname !== "/login" && <Sidebar />} */}
       <div className="z-40 drawer">
         {/* Hidden input for Daisy drawer */}
         <input
